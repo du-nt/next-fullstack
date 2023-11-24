@@ -1,12 +1,15 @@
-"use client";
+'use client'
 
-import { signOut } from "next-auth/react";
+import { Box, Button, Typography } from '@mui/material'
+import { signOut } from 'next-auth/react'
 
 export default function ProfilePage() {
   return (
-    <div>
-      <div>Profile</div>
-      <button onClick={() => signOut()}>Signout</button>
-    </div>
-  );
+    <Box>
+      <Typography>Profile page</Typography>
+      <Button variant="contained" onClick={() => signOut()}>
+        Logout
+      </Button>
+    </Box>
+  )
 }

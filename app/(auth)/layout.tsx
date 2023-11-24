@@ -1,15 +1,9 @@
-import { PropsWithChildren } from "react";
-import { redirect, useSearchParams } from "next/navigation";
-import { getServerSession } from "next-auth";
+'use client'
 
-export default async function RedirectHomeRoute({
-  children,
-}: PropsWithChildren) {
-  const session = await getServerSession();
+import { PropsWithChildren } from 'react'
 
-  if (session?.user) {
-    redirect("/api/auth/signin");
-  }
+import EmptyLayout from '@/components/templates/EmptyLayout'
 
-  return <div>{children}</div>;
+export default function RedirectHomeRoute({ children }: PropsWithChildren) {
+  return <EmptyLayout>{children}</EmptyLayout>
 }

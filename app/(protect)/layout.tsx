@@ -1,13 +1,9 @@
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import { PropsWithChildren } from "react";
+'use client'
 
-export default async function ProtectRoute({ children }: PropsWithChildren) {
-  const session = await getServerSession();
+import { PropsWithChildren } from 'react'
 
-  if (!session?.user) {
-    redirect("/api/auth/signin");
-  }
+import DefaultLayout from '@/components/templates/DefaultLayout'
 
-  return <div>{children}</div>;
+export default function ProtectRoute({ children }: PropsWithChildren) {
+  return <DefaultLayout>{children}</DefaultLayout>
 }
