@@ -1,11 +1,13 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import RootProvider from '@/providers/RootProvider'
 import { PropsWithChildren } from 'react'
+import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
-import { getTranslations } from '@/i18n'
 import { NextIntlClientProvider } from 'next-intl'
+
+import { getTranslations } from '@/i18n'
+import RootProvider from '@/providers/RootProvider'
 import ThemeRegistry from '@/providers/ThemeRegistry'
+
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Create Next App',

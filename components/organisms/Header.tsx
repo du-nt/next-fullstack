@@ -10,13 +10,13 @@ import {
 } from '@mui/material'
 import { setCookie } from 'cookies-next'
 import NextLink from 'next/link'
+import { signOut, useSession } from 'next-auth/react'
 
 import ThemeSwitch from '@/components/atoms/ThemeSwitch'
 import LanguageSwitcher from '@/components/molecules/LanguageSwitcher'
 import MobileMenu from '@/components/molecules/MobileMenu'
 import useSidebar from '@/hooks/useSidebar'
 import useThemeContext from '@/hooks/useThemeContext'
-import { signOut, useSession } from 'next-auth/react'
 
 export default function Header() {
   const { theme, setTheme } = useThemeContext()
